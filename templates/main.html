@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Predicting fish sizes</title>
+
+
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">    
+        <link href="{{url_for('static', filename = 'styles.css')}}" rel="stylesheet">
+                <style type="text/css">
+        .login,
+.image {
+  min-height: 100vh;
+}
+
+body{
+        background-image: url("https://i.pinimg.com/originals/e8/6e/19/e86e19fe99240331517ba7e6cd494684.jpg");
+        background-size: 50%;
+        background-repeat:no-repeat;
+        background-attachment: fixed;
+        background-color: black;
+    }
+</style>
+
+    </head>
+    <body>
+       
+
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <!-- The image half -->
+                <div class="col-md-6 d-none d-md-flex bg-image"></div>
+        
+        
+                <!-- The content half -->
+                <div class="col-md-6 bg-light">
+                    <div class="login d-flex align-items-center py-5">
+        
+                        <!-- content-->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10 col-xl-7 mx-auto">
+                                    <h6 class="display-4"><b>FISH WEIGHT<b> </h6>
+                                    <form action="{{url_for('predict')}}" method="post">
+                                        <div class="form-group mb-3">
+                                            <label for="" >Species *</span></label>
+                                            <select class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" name="aa" id="aa">
+                                               <option>Bream</option>
+                                               <option>Roach</option>
+                                               <option>Whitefish</option>
+                                               <option>Parkki</option>
+                                               <option>Perch</option>
+                                               <option>Pike</option>
+                                               <option>Smelt</option>
+                                            </select>
+                                            <br>
+                                            <label for="" >vertical length in cm *</span></label>
+                                            <input name="bb" id="bb" type="number" step=0.01  placeholder="23.2" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                            <br>
+                                            <label for="" >diagonal length in cm *</span></label>
+                                            <input name="cc" id="cc" type="number" step=0.01 placeholder="25.4" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                            <br>
+                                            <label for="" >cross length in cm *</span></label>
+                                            <input name="dd" id="dd" type="number" step=0.01 placeholder="30.0" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                            <br>
+                                            <label for="" >Height *</span></label>
+                                            <input name="ee"id="ee" type="number" step=0.01 placeholder="11.5200" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                            <br>
+                                            <label for="" >Width *</span></label>
+                                            <input name="ff"id="ff" type="number" step=0.01 placeholder="4.0200" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                            
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Submit</button>
+                                    </form>
+                                    <p>{{prediction_text}}</p>
+                                </div>
+                            </div>
+                        </div><!-- End -->
+        
+                    </div>
+                </div><!-- End -->
+        
+            </div>
+        </div>
+        
+        
+    </body>
+
+</html>
