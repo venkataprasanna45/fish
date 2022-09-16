@@ -34,7 +34,7 @@ def predict():
 
 	print(int_features)
 
-	return render_template("main.html",prediction_text=" The estimated fish weight is {} in gms.".format(result))
+	return render_template("main.html",prediction_text=" The Estimated Fish Weight is {} in gms.".format(result))
 
 
 if __name__ == "__main__":
